@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MoviesApp</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_uname">UserName</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="touch_id">Enable Touch ID login</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="imageThumbnail">imageThumbnail</string>
+    <string name="invalid_username">Enter valid username</string>
+    <string name="invalid_password">Enter valid password</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="bioprompt_title">Capture Biometric</string>
+    <string name="bioprompt_sub_title"></string>
+    <string name="bioprompt_desc"></string>
+    <string name="bioprompt_negative_btn">Cancel</string>
+    <string name="logout">Logout</string>
+</resources>
