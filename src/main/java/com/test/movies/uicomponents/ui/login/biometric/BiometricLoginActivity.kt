@@ -26,7 +26,7 @@ private lateinit var biologinViewModel: BiometricLoginViewModel
 * This activity displays a login screen saving credentials to biometric keystore
 * enabling auto login further
  */
-class BiometricLogActivity : BaseActivity(), ResultCallBack {
+class BiometricLoginActivity : BaseActivity(), ResultCallBack {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -122,10 +122,10 @@ class BiometricLogActivity : BaseActivity(), ResultCallBack {
     }
 
     private fun loadViewModel() {
-        biologinViewModel = ViewModelProviders.of(this@BiometricLogActivity).get(
+        biologinViewModel = ViewModelProviders.of(this@BiometricLoginActivity).get(
             BiometricLoginViewModel::class.java
         )
-        biologinViewModel.setViewListener(this@BiometricLogActivity)
+        biologinViewModel.setViewListener(this@BiometricLoginActivity)
     }
 
 
@@ -135,7 +135,7 @@ class BiometricLogActivity : BaseActivity(), ResultCallBack {
     }
 
     private fun setUserName() {
-        keyStoreHelper.createKeys(this@BiometricLogActivity, Constants.KEYSTORE_ENCRPT_UNAME)
+        keyStoreHelper.createKeys(this@BiometricLoginActivity, Constants.KEYSTORE_ENCRPT_UNAME)
 
         val sharedpreferences = getSharedPreferences(
             Constants.SHARED_PREFERENCES,
@@ -150,7 +150,7 @@ class BiometricLogActivity : BaseActivity(), ResultCallBack {
     }
 
     private fun setPassword() {
-        keyStoreHelper.createKeys(this@BiometricLogActivity, Constants.KEYSTORE_ENCRPT_PWD)
+        keyStoreHelper.createKeys(this@BiometricLoginActivity, Constants.KEYSTORE_ENCRPT_PWD)
         val sharedpreferences = getSharedPreferences(
             Constants.SHARED_PREFERENCES,
             Context.MODE_PRIVATE
@@ -164,7 +164,7 @@ class BiometricLogActivity : BaseActivity(), ResultCallBack {
     }
 
     private fun getUserName(): String? {
-        keyStoreHelper.createKeys(this@BiometricLogActivity, Constants.KEYSTORE_ENCRPT_UNAME)
+        keyStoreHelper.createKeys(this@BiometricLoginActivity, Constants.KEYSTORE_ENCRPT_UNAME)
         val sharedpreferences = getSharedPreferences(
             Constants.SHARED_PREFERENCES,
             Context.MODE_PRIVATE
@@ -176,7 +176,7 @@ class BiometricLogActivity : BaseActivity(), ResultCallBack {
     }
 
     private fun getPassword(): String? {
-        keyStoreHelper.createKeys(this@BiometricLogActivity, Constants.KEYSTORE_ENCRPT_PWD)
+        keyStoreHelper.createKeys(this@BiometricLoginActivity, Constants.KEYSTORE_ENCRPT_PWD)
         val sharedpreferences = getSharedPreferences(
             Constants.SHARED_PREFERENCES,
             Context.MODE_PRIVATE
@@ -196,12 +196,12 @@ class BiometricLogActivity : BaseActivity(), ResultCallBack {
                     )
                 ) {
                     keyStoreHelper.createKeys(
-                        this@BiometricLogActivity,
+                        this@BiometricLoginActivity,
                         Constants.KEYSTORE_ENCRPT_UNAME
                     )
                     setUserName()
                     keyStoreHelper.createKeys(
-                        this@BiometricLogActivity,
+                        this@BiometricLoginActivity,
                         Constants.KEYSTORE_ENCRPT_PWD
                     )
                     setPassword()

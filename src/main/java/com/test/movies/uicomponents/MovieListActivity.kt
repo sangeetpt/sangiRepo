@@ -9,7 +9,7 @@ import android.widget.ImageView
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.test.movies.BaseActivity
-import com.test.movies.uicomponents.ui.login.biometric.BiometricLogActivity
+import com.test.movies.uicomponents.ui.login.biometric.BiometricLoginActivity
 import com.test.movies.R
 import com.test.movies.adapter.MoviesAdapter
 import com.test.movies.model.MovieModel
@@ -84,7 +84,7 @@ class MovieListActivity : BaseActivity() {
     private fun callLogout() {
         btnLogout.setOnClickListener {
             finish()
-            val intent = Intent(this, BiometricLogActivity::class.java)
+            val intent = Intent(this, BiometricLoginActivity::class.java)
             startActivity(intent)
         }
     }
